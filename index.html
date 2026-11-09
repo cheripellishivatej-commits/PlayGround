@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17151a">
+  <title>Monkey King: Celestial Uprising</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell" id="gameShell">
+    <canvas id="game" aria-label="Monkey King action game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Monkey King home"><span class="brand-mark">☯</span><span>JADE<span class="brand-light">REALM</span><small>LEGENDS OF THE CELESTIAL COURT</small></span></a>
+      <div class="top-actions"><span class="chapter-chip"><i></i> CHAPTER 01 <b>·</b> HEAVEN'S GATE</span><button class="icon-btn" id="soundBtn" aria-label="Toggle sound" title="Sound">♫</button><button class="icon-btn" id="pauseBtn" aria-label="Pause game" title="Pause">Ⅱ</button></div>
+    </header>
+    <section class="hud" id="hud" aria-label="Game status">
+      <div class="hero-status"><div class="avatar">猴</div><div class="status-info"><div class="status-name">THE GREAT SAGE <span>LV. 01</span></div><div class="bar-row"><span class="bar-label">VIT</span><div class="meter"><i id="healthFill"></i></div><b id="healthText">100 / 100</b></div><div class="bar-row xp-row"><span class="bar-label">QI</span><div class="meter"><i id="qiFill"></i></div><b id="qiText">0 / 100</b></div></div></div>
+      <div class="objective"><span class="objective-icon">✦</span><div><small>YOUR DESTINY</small><strong id="objectiveText">AWAKEN THE CELESTIAL COURT</strong></div></div>
+      <div class="wave-status"><small>DEMONS BANISHED</small><strong><span id="killCount">00</span><em> / 12</em></strong><div class="wave-dots"><i class="active"></i><i></i><i></i></div></div>
+    </section>
+    <div class="boss-bar" id="bossBar"><div class="boss-label">THE JADE WARLORD <span>✦</span></div><div class="boss-meter"><i id="bossFill"></i></div></div>
+    <div class="toast" id="toast"><span>✦</span><b id="toastText">THE HEAVENLY GATE OPENS</b></div>
+    <aside class="controls-hint" id="controlsHint"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><span>MOVE</span><span class="hint-divider"></span><span class="keycap wide">SPACE</span><span>STAFF STRIKE</span><span class="keycap wide gold-key">SHIFT</span><span>DASH</span></aside>
+    <div class="mobile-controls" id="mobileControls"><div class="dpad" id="dpad"><button data-dir="up">▲</button><div><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div></div><button class="touch-action" id="touchDash"><span>↗</span><small>DASH</small></button><button class="touch-action strike" id="touchStrike"><span>☯</span><small>STRIKE</small></button></div>
+    <section class="overlay intro-overlay" id="introOverlay">
+      <div class="intro-card"><div class="eyebrow"><span></span> A LEGEND REBORN <span></span></div><div class="title-han">齐天大圣</div><h1>MONKEY KING</h1><p class="subtitle">CELESTIAL UPRISING</p><div class="gold-rule"><i>✦</i></div><p class="intro-copy">Heaven has forgotten who it fears.<br><b>Remind them.</b></p><button class="primary-btn" id="startBtn"><span>ENTER THE HEAVENLY GATE</span><b>↗</b></button><div class="intro-foot"><span>✧</span> A STAFF. A KINGDOM. A LITTLE CHAOS. <span>✧</span></div></div>
+      <div class="side-note">FLOW LIKE THE CLOUDS <span>·</span> STRIKE LIKE THUNDER</div>
+    </section>
+    <section class="overlay message-overlay hidden" id="messageOverlay"><div class="message-card"><div class="message-seal" id="messageSeal">✦</div><div class="eyebrow" id="messageEyebrow">A MOMENT OF CALM</div><h2 id="messageTitle">PAUSED</h2><p id="messageCopy">The heavens can wait.</p><button class="primary-btn" id="resumeBtn"><span>RETURN TO BATTLE</span><b>↗</b></button><button class="text-btn" id="restartBtn">RESTART THE LEGEND</button></div></section>
+    <div class="bottom-note"><span>雲遊四海</span> <i>·</i> THE CLOUDS CARRY YOU</div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
